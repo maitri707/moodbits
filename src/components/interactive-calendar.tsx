@@ -609,11 +609,11 @@ export function InteractiveCalendar({ className }: InteractiveCalendarProps) {
             </Button>
           </div>
         </CardHeader>
-        <CardContent className="relative flex min-h-0 flex-1 overflow-hidden px-4 pt-2 pb-8 lg:pb-10">
+        <CardContent className="relative flex min-h-0 flex-1 overflow-hidden px-4 pt-8 pb-8 lg:pt-2 lg:pb-10">
           {/* subtle purple gradient backdrop for calendar area */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-linear-to-br from-purple-700/10 via-transparent to-fuchsia-700/10"
+            className="pointer-events-none absolute inset-0 bg-linear-to-br from-purple-600/10 via-transparent to-fuchsia-600/10"
           />
           <AnimatePresence mode="wait">
             <motion.div

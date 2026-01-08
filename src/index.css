@@ -127,7 +127,7 @@
     font-family: "LoraItalic", monospace;
   }
   body {
-    @apply bg-background text-foreground h-screen w-screen overflow-hidden overscroll-none;
+    @apply bg-background text-foreground min-h-screen w-full overflow-x-hidden overflow-y-auto overscroll-none lg:h-screen lg:overflow-y-hidden;
   }
 }
 
