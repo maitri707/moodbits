@@ -417,7 +417,7 @@ function MonthGrid({
             return (
               <text
                 dominantBaseline="hanging"
-                fill="#dcbdf0"
+                fill="#b5a1c2"
                 fontFamily="LoraItalic, monospace"
                 fontSize={showAllYear ? 11 : 16}
                 fontWeight="600"
@@ -437,7 +437,7 @@ function MonthGrid({
           {DAY_LABELS.map((label, i) => (
             <text
               dominantBaseline="hanging"
-              fill="#dcbdf0"
+              fill="#b5a1c2"
               fontFamily="LoraItalic, monospace"
               fontSize={labelFontSize}
               fontWeight="500"
