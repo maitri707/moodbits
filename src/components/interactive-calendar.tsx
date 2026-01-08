@@ -609,8 +609,7 @@ export function InteractiveCalendar({ className }: InteractiveCalendarProps) {
             </Button>
           </div>
         </CardHeader>
-        <CardContent className="relative flex min-h-0 flex-1 max-h-[calc(100vh-120px)] lg:max-h-none overflow-y-auto lg:overflow-y-hidden px-4 pt-8 pb-8 lg:pt-2 lg:pb-10">
-          {/* subtle purple gradient backdrop for calendar area */}
+        <CardContent className="relative flex min-h-0 flex-1 overflow-hidden md:overflow-auto lg:overflow-hidden px-4 pt-8 pb-8 lg:pt-3 lg:pb-10">          {/* subtle purple gradient backdrop for calendar area */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 bg-linear-to-br from-purple-800/10 via-transparent to-fuchsia-900/10"
@@ -619,10 +618,10 @@ export function InteractiveCalendar({ className }: InteractiveCalendarProps) {
             <motion.div
               animate={{ filter: "blur(0px)", opacity: 1 }}
               className={cn(
-                "relative z-10 m-auto mt-1 flex w-full flex-col place-content-center items-center justify-start gap-0 lg:grid lg:justify-center lg:gap-0.5",
+                "relative z-10 m-auto mt-1 flex w-full flex-col place-content-center items-center justify-start gap-0 md:h-full md:w-full lg:grid lg:justify-center lg:gap-0.5",
                 showAllYear
-                  ? "grid grid-cols-2 grid-rows-6 lg:grid-cols-4 lg:grid-rows-3 lg:mt-6"
-                  : "grid-cols-1 grid-rows-4 gap-x-2 gap-y-1 lg:grid-cols-2 lg:grid-rows-2 lg:mt-3"
+                  ? "grid grid-cols-2 grid-rows-6 gap-x-2 gap-y-1 md:h-auto md:grid-cols-3 lg:h-auto lg:grid-cols-4 lg:grid-rows-3 lg:mt-3"
+                  : "grid-cols-1 grid-rows-4 gap-x-2 gap-y-1 lg:grid-cols-2 lg:grid-rows-2 lg:mt-10"
               )}
               exit={{ filter: "blur(4px)", opacity: 0 }}
               initial={{ filter: "blur(4px)", opacity: 0 }}
@@ -649,8 +648,8 @@ export function InteractiveCalendar({ className }: InteractiveCalendarProps) {
             </motion.div>
           </AnimatePresence>
         </CardContent>
-        <CardFooter className="flex items-center justify-end px-3 mt-2">
-          {!showAllYear && (
+        {!showAllYear && (
+          <CardFooter className="flex items-center justify-end px-3 mt-2">
             <div className="flex items-center gap-1">
               <Button
                 aria-label="Previous quadrimester"
@@ -692,8 +691,8 @@ export function InteractiveCalendar({ className }: InteractiveCalendarProps) {
                 </svg>
               </Button>
             </div>
-          )}
-        </CardFooter>
+          </CardFooter>
+        )}
       </Card>
     </div>
   );
