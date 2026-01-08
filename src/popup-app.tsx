@@ -93,6 +93,11 @@ function PopupApp() {
         className="relative w-72 overflow-hidden rounded-xl bg-background p-4"
         style={{ boxShadow: "0 0 18px rgba(255, 255, 255, 0.12)" }}
       >
+        {/* subtle purple gradient backdrop */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-linear-to-br from-purple-700/10 via-transparent to-fuchsia-700/10"
+        />
         <header className="flex items-center gap-3">
           <img
             alt="moodbits logo"
@@ -102,8 +107,8 @@ function PopupApp() {
             width={40}
           />
           <div>
-            <h1 className="font-semibold text-sm">moodbits</h1>
-            <p className="text-pretty text-[11px] text-muted-foreground">
+            <h1 className="font-semibold text-md">moodbits</h1>
+            <p className="text-pretty text-[12px] text-muted-foreground">
               your minimal mood calendar
             </p>
           </div>
@@ -159,10 +164,10 @@ function PopupApp() {
           </p>
           <div className="space-y-1.5">
             <Label className="text-xs" htmlFor="username">
-              your name
+              Your Name
             </Label>
             <Input
-              className="h-7 border-border/50 text-xs lowercase"
+              className="h-7 border-border text-xs lowercase"
               id="username"
               onChange={(e) => setUsername(e.target.value)}
               placeholder="enter your name"
@@ -179,14 +184,14 @@ function PopupApp() {
           </p>
           <div className="flex gap-2">
             <button
-              className="flex flex-1 items-center justify-center gap-1.5 rounded-md border border-border/50 py-2 text-[11px] transition-colors hover:bg-accent/30"
+              className="flex flex-1 items-center justify-center gap-1.5 rounded-md border border-border py-2 text-[11px] transition-colors hover:bg-accent/30"
               onClick={handleDownloadBackup}
               type="button"
             >
               <IconDownload className="size-3.5" />
               backup
             </button>
-            <label className="flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md border border-border/50 py-2 text-[11px] transition-colors hover:bg-accent/30">
+            <label className="flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md border border-border py-2 text-[11px] transition-colors hover:bg-accent/30">
               <IconUpload className="size-3.5" />
               restore
               <input
@@ -202,7 +207,7 @@ function PopupApp() {
         <Separator className="my-3" />
 
         <div className="flex items-center justify-center">
-          <p className="text-[10px] text-muted-foreground">
+          <p className="text-[12px] text-muted-foreground">
             customised with ♥ by mai3
           </p>
         </div>
