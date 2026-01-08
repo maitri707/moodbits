@@ -74,11 +74,16 @@ export function TodoList({ fullSize = false }: TodoListProps) {
 
   return (
     <Card
-      className={`flex min-h-0 flex-1 flex-col gap-0 border-border/50 py-2 ${
+      className={`relative flex min-h-0 flex-1 flex-col gap-0 border-border/50 py-2 ${
         fullSize ? "w-full" : "max-h-48 w-full lg:max-h-none lg:w-71"
       }`}
     >
-      <CardHeader className="px-3 pb-2 pt-1">
+      {/* subtle purple gradient backdrop */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-linear-to-br from-purple-800/10 via-transparent to-fuchsia-900/10"
+      />
+      <CardHeader className="relative z-10 px-3 pb-2 pt-1">
         <CardTitle className="flex items-center gap-2 font-medium text-sm lowercase">
           <span>tasks</span>
           {totalCount > 0 && (
@@ -88,7 +93,7 @@ export function TodoList({ fullSize = false }: TodoListProps) {
           )}
         </CardTitle>
       </CardHeader>
-      <CardContent className="flex min-h-0 flex-1 flex-col gap-1.5 px-3">
+      <CardContent className="relative z-10 flex min-h-0 flex-1 flex-col gap-1.5 px-3">
         <div className="flex gap-1">
           <Input
             className="h-8 flex-1 border-border/50 text-sm lowercase"
@@ -179,8 +184,8 @@ export function TodoList({ fullSize = false }: TodoListProps) {
           </div>
         </ScrollArea>
       </CardContent>
-      <Separator className="my-2" />
-      <div className="flex items-center justify-center px-2 py-4">
+      <Separator className="relative z-10 my-2" />
+      <div className="relative z-10 flex items-center justify-center px-2 py-4">
         <p className="text-muted-foreground text-sm lowercase">
           moodbits of {username}
         </p>

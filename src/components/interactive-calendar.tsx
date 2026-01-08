@@ -417,7 +417,7 @@ function MonthGrid({
             return (
               <text
                 dominantBaseline="hanging"
-                fill="#ffffff"
+                fill="#dcbdf0"
                 fontFamily="LoraItalic, monospace"
                 fontSize={showAllYear ? 11 : 16}
                 fontWeight="600"
@@ -437,7 +437,7 @@ function MonthGrid({
           {DAY_LABELS.map((label, i) => (
             <text
               dominantBaseline="hanging"
-              fill="#888888"
+              fill="#dcbdf0"
               fontFamily="LoraItalic, monospace"
               fontSize={labelFontSize}
               fontWeight="500"
@@ -573,7 +573,7 @@ export function InteractiveCalendar({ className }: InteractiveCalendarProps) {
   return (
     <div className={cn("flex min-h-0 flex-1 gap-2", className)}>
       <Card className="flex min-h-0 flex-1 flex-col gap-0 border-border/50 py-2">
-        <CardHeader className="flex flex-row items-center justify-between px-3 pb-1 pt-1 mb-3">
+        <CardHeader className="flex flex-row items-center justify-between px-3 pb-1 pt-1 mb-2">
           <CardTitle className="font-medium text-sm lowercase">
             moodbits 2026
           </CardTitle>
@@ -613,16 +613,16 @@ export function InteractiveCalendar({ className }: InteractiveCalendarProps) {
           {/* subtle purple gradient backdrop for calendar area */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-linear-to-br from-purple-600/10 via-transparent to-fuchsia-600/10"
+            className="pointer-events-none absolute inset-0 bg-linear-to-br from-purple-800/10 via-transparent to-fuchsia-900/10"
           />
           <AnimatePresence mode="wait">
             <motion.div
               animate={{ filter: "blur(0px)", opacity: 1 }}
               className={cn(
-                "relative z-10 m-auto mt-1 flex w-full flex-col place-content-center items-center justify-start gap-0 lg:mt-2 lg:grid lg:justify-center lg:gap-0.5",
+                "relative z-10 m-auto mt-1 flex w-full flex-col place-content-center items-center justify-start gap-0 lg:grid lg:justify-center lg:gap-0.5",
                 showAllYear
-                  ? "grid grid-cols-2 grid-rows-6 lg:grid-cols-4 lg:grid-rows-3"
-                  : "grid-cols-1 grid-rows-4 gap-x-2 gap-y-1 lg:grid-cols-2 lg:grid-rows-2"
+                  ? "grid grid-cols-2 grid-rows-6 lg:grid-cols-4 lg:grid-rows-3 lg:mt-6"
+                  : "grid-cols-1 grid-rows-4 gap-x-2 gap-y-1 lg:grid-cols-2 lg:grid-rows-2 lg:mt-3"
               )}
               exit={{ filter: "blur(4px)", opacity: 0 }}
               initial={{ filter: "blur(4px)", opacity: 0 }}
@@ -649,7 +649,7 @@ export function InteractiveCalendar({ className }: InteractiveCalendarProps) {
             </motion.div>
           </AnimatePresence>
         </CardContent>
-        <CardFooter className="flex items-center justify-end px-3 pt-1 mt-2">
+        <CardFooter className="flex items-center justify-end px-3 mt-2">
           {!showAllYear && (
             <div className="flex items-center gap-1">
               <Button
