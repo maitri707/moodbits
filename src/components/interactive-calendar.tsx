@@ -609,7 +609,7 @@ export function InteractiveCalendar({ className }: InteractiveCalendarProps) {
             </Button>
           </div>
         </CardHeader>
-        <CardContent className={cn("flex min-h-0 flex-1 overflow-auto py-3 md:overflow-auto px-4 pt-8 pb-8", showAllYear ? "lg:overflow-auto lg:pb-1" : "lg:overflow-hidden lg:mt-5 lg:pb-0")}>          {/* subtle purple gradient backdrop for calendar area */}
+        <CardContent className={cn("flex min-h-0 flex-1 overflow-auto py-3 md:overflow-auto px-4 pt-8 pb-8", showAllYear ? "lg:overflow-auto lg:pb-1" : "lg:overflow-hidden lg:mt-3 lg:pb-0")}>          {/* subtle purple gradient backdrop for calendar area */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 bg-linear-to-br from-purple-800/10 via-transparent to-fuchsia-900/10"
